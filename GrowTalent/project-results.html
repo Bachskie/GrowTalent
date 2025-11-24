@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gevonden Professionals - GrowTalent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-styles.css">
+    <link rel="stylesheet" href="flow-styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><a href="index.html" style="color: inherit; text-decoration: none;">GrowTalent</a></h1>
+            </div>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Professionals</a>
+                <a href="post-project.html" class="nav-link">Opdracht plaatsen</a>
+                <a href="#" class="nav-link">Inloggen</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Results Header with Project Summary -->
+        <section class="results-header">
+            <div class="container">
+                <h2>Professionals gevonden voor jouw opdracht</h2>
+                <div class="project-summary" id="project-summary">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="container">
+                <div class="results-info">
+                    <div class="results-count" id="results-count">
+                        <!-- Filled by JavaScript -->
+                    </div>
+                    <div class="sort-options">
+                        <label for="sort-by">Sorteer op:</label>
+                        <select id="sort-by">
+                            <option value="match">Beste match</option>
+                            <option value="rating">Hoogste beoordeling</option>
+                            <option value="price-low">Prijs: laag naar hoog</option>
+                            <option value="price-high">Prijs: hoog naar laag</option>
+                            <option value="availability">Snelst beschikbaar</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="professionals-grid" id="results-grid">
+                    <!-- Filled by JavaScript -->
+                </div>
+
+                <div class="load-more-container" id="load-more-container" style="display: none;">
+                    <button class="btn btn-primary" id="load-more-btn">Toon meer vergelijkbare professionals</button>
+                </div>
+
+                <div class="no-results" id="no-results" style="display: none;">
+                    <h3>Geen professionals gevonden</h3>
+                    <p>Probeer je zoekcriteria aan te passen of plaats een nieuwe opdracht.</p>
+                    <button class="btn btn-primary" onclick="window.location.href='post-project.html'">Nieuwe opdracht plaatsen</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shortlist Panel -->
+    <div class="shortlist-panel" id="shortlist-panel">
+        <div class="shortlist-header">
+            <h3>Shortlist (<span id="shortlist-count">0</span>)</h3>
+            <button class="close-btn" id="close-shortlist">&times;</button>
+        </div>
+        <div class="shortlist-body" id="shortlist-body">
+            <div class="shortlist-empty">
+                <div class="icon">⭐</div>
+                <p>Nog geen professionals op je shortlist</p>
+                <p style="font-size: 0.875rem;">Klik op het ster-icoon om professionals toe te voegen</p>
+            </div>
+        </div>
+        <div class="shortlist-footer">
+            <button class="btn btn-primary" id="send-batch-invite" style="width: 100%;" disabled>
+                Stuur uitnodiging naar allen
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button class="fab" id="shortlist-fab" style="display: none;">
+        ⭐
+        <span class="badge-count" id="fab-count">0</span>
+    </button>
+
+    <!-- Meeting Scheduler Modal -->
+    <div class="modal-overlay" id="meeting-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Plan kennismaking</h3>
+                <button class="close-btn" onclick="closeModal('meeting-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="meeting-info" id="meeting-professional-info">
+                    <!-- Filled by JS -->
+                </div>
+                
+                <form id="meeting-form">
+                    <div class="form-group">
+                        <label for="meeting-date">Selecteer datum</label>
+                        <input type="date" id="meeting-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Selecteer tijdstip</label>
+                        <div class="time-slots" id="time-slots">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meeting-type">Type afspraak</label>
+                        <select id="meeting-type" required>
+                            <option value="">Selecteer type</option>
+                            <option value="video">Videocall (Teams/Zoom)</option>
+                            <option value="phone">Telefonisch</option>
+                            <option value="in-person">Persoonlijk</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="meeting-notes">Bericht (optioneel)</label>
+                        <textarea id="meeting-notes" rows="3" placeholder="Onderwerpen die je wilt bespreken..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('meeting-modal')">Annuleren</button>
+                <button class="btn btn-primary" id="confirm-meeting">Verstuur uitnodiging</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="modal-overlay" id="chat-modal">
+        <div class="modal" style="max-width: 800px;">
+            <div class="modal-header">
+                <h3 id="chat-professional-name">Chat</h3>
+                <button class="close-btn" onclick="closeModal('chat-modal')">&times;</button>
+            </div>
+            <div class="modal-body" style="padding: 0;">
+                <div class="chat-interface">
+                    <!-- Chat Header Info -->
+                    <div class="chat-header-info" id="chat-header-info">
+                        <!-- Filled by JS -->
+                    </div>
+                    
+                    <!-- AI Summary (shown when available) -->
+                    <div class="ai-summary-panel" id="ai-summary" style="display: none;">
+                        <div class="ai-summary-header">
+                            <span>🤖</span>
+                            <span>AI Gespreksamenvatting</span>
+                        </div>
+                        <div class="ai-summary-content" id="ai-summary-text">
+                            <!-- Filled by JS -->
+                        </div>
+                        <div class="ai-summary-actions">
+                            <button onclick="regenerateSummary()">Vernieuw samenvatting</button>
+                            <button onclick="exportSummary()">Exporteer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages filled by JS -->
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="chat-toolbar">
+                            <label class="toolbar-btn">
+                                <span>📎</span>
+                                <span>Bestand</span>
+                                <input type="file" id="file-upload" multiple>
+                            </label>
+                            <button class="toolbar-btn" id="send-proposal-btn">
+                                <span>📄</span>
+                                <span>Voorstel</span>
+                            </button>
+                            <button class="toolbar-btn" id="generate-summary-btn">
+                                <span>🤖</span>
+                                <span>AI Samenvatting</span>
+                            </button>
+                        </div>
+                        <form class="chat-input-form" id="chat-form">
+                            <textarea id="chat-input" placeholder="Type je bericht..." rows="2" required></textarea>
+                            <button type="submit" class="btn btn-primary">Verstuur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Proposal Modal -->
+    <div class="modal-overlay" id="proposal-modal">
+        <div class="modal" style="max-width: 700px;">
+            <div class="modal-header">
+                <h3>Voorstel opstellen</h3>
+                <button class="close-btn" onclick="closeModal('proposal-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h4 style="margin-top: 0; margin-bottom: 1rem;">Kies een template</h4>
+                <div class="proposal-templates" id="proposal-templates">
+                    <div class="template-card" data-template="basic">
+                        <div class="template-icon">📋</div>
+                        <div class="template-name">Basis Voorstel</div>
+                        <div class="template-description">Eenvoudig voorstel met prijs en tijdlijn</div>
+                    </div>
+                    <div class="template-card" data-template="detailed">
+                        <div class="template-icon">📊</div>
+                        <div class="template-name">Gedetailleerd Voorstel</div>
+                        <div class="template-description">Inclusief deliverables en mijlpalen</div>
+                    </div>
+                    <div class="template-card" data-template="custom">
+                        <div class="template-icon">✏️</div>
+                        <div class="template-name">Aangepast</div>
+                        <div class="template-description">Volledig zelf samenstellen</div>
+                    </div>
+                </div>
+                
+                <form class="proposal-editor" id="proposal-form" style="display: none;">
+                    <div class="proposal-section">
+                        <div class="proposal-section-header">
+                            <span class="proposal-section-title">Introductie</span>
+                            <span class="section-help">Leg uit waarom je geschikt bent</span>
+                        </div>
+                        <textarea id="proposal-intro" rows="3" placeholder="Beschrijf je aanpak en expertise..."></textarea>
+                    </div>
+                    
+                    <div class="proposal-section">
+                        <div class="proposal-section-header">
+                            <span class="proposal-section-title">Deliverables</span>
+                            <span class="section-help">Wat lever je op?</span>
+                        </div>
+                        <ul class="deliverables-list" id="deliverables-list">
+                            <li class="deliverable-item">
+                                <input type="checkbox" checked>
+                                <div class="deliverable-content">
+                                    <input type="text" class="deliverable-title" value="Initieel onderzoek en strategie" style="border: none; background: transparent; width: 100%; font-weight: 600;">
+                                    <input type="text" class="deliverable-timeline" value="Week 1-2" style="border: none; background: transparent; width: 100%; font-size: 0.8125rem;">
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-secondary" onclick="addDeliverable()" style="width: 100%; margin-top: 0.5rem;">+ Voeg deliverable toe</button>
+                    </div>
+                    
+                    <div class="proposal-section">
+                        <div class="proposal-section-header">
+                            <span class="proposal-section-title">Prijs & Tijdlijn</span>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label>Totaal bedrag (€)</label>
+                                <input type="number" id="proposal-price" placeholder="2500" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Tijdsduur</label>
+                                <input type="text" id="proposal-timeline" placeholder="bijv. 6 weken" required>
+                            </div>
+                        </div>
+                        
+                        <div class="price-breakdown" id="price-breakdown" style="display: none;">
+                            <div class="price-row">
+                                <span>Basisprijs</span>
+                                <span id="base-price">€0</span>
+                            </div>
+                            <div class="price-row">
+                                <span>BTW (21%)</span>
+                                <span id="vat-price">€0</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Totaal</span>
+                                <span id="total-price">€0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="proposal-section">
+                        <div class="proposal-section-header">
+                            <span class="proposal-section-title">Aanvullende opmerkingen</span>
+                        </div>
+                        <textarea id="proposal-notes" rows="2" placeholder="Extra informatie (optioneel)"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('proposal-modal')">Annuleren</button>
+                <button class="btn btn-primary" id="send-proposal" disabled>Verstuur voorstel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invitation Modal -->
+    <div class="modal-overlay" id="invitation-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Uitnodigen voor project</h3>
+                <button class="close-btn" onclick="closeModal('invitation-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="meeting-info" id="invitation-professional-info">
+                    <!-- Filled by JS -->
+                </div>
+                
+                <form class="invitation-form" id="invitation-form">
+                    <div class="form-group">
+                        <label for="invitation-message">Persoonlijk bericht</label>
+                        <textarea id="invitation-message" rows="5" required placeholder="Vertel waarom je graag met deze professional wilt werken..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invitation-budget">Voorgesteld budget</label>
+                        <input type="text" id="invitation-budget" placeholder="bijv. €2.500 - €5.000" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invitation-timeline">Gewenste tijdlijn</label>
+                        <input type="text" id="invitation-timeline" placeholder="bijv. Start in januari, 3 maanden" required>
+                    </div>
+                    
+                    <div class="invitation-preview">
+                        <h4>Preview uitnodiging</h4>
+                        <p style="margin: 0; color: var(--text-secondary); font-size: 0.875rem;">
+                            De professional ontvangt een notificatie met jouw bericht en projectdetails.
+                        </p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('invitation-modal')">Annuleren</button>
+                <button class="btn btn-primary" id="send-invitation">Verstuur uitnodiging</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 GrowTalent. Alle rechten voorbehouden.</p>
+        </div>
+    </footer>
+
+    <script src="matching-algorithm.js"></script>
+    <script src="project-results.js"></script>
+    <script src="flow-interactions.js"></script>
+</body>
+</html>
