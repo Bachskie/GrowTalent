@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Dashboard - GrowTalent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="community-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="dashboard-logo">
+                    <a href="index.html" style="text-decoration: none;">
+                        <h1>GrowTalent <span style="font-size: 0.8rem; color: #2563eb;">Community</span></h1>
+                    </a>
+                </div>
+                <nav class="dashboard-nav">
+                    <a href="channel.html?channel=copywriting" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>Channels</span>
+                    </a>
+                    <a href="community-dashboard.html" class="nav-link active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="profile.html" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span>Profiel</span>
+                    </a>
+                    <a href="community-dashboard.html#notifications" class="nav-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span>Notificaties</span>
+                    </a>
+                </nav>
+                <div class="user-menu">
+                    <div class="user-avatar" id="userAvatar">JD</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="dashboard-layout">
+                <div class="dashboard-main">
+                    <!-- Welcome Section -->
+                    <section class="welcome-section">
+                        <h2>Welkom bij GrowTalent Community! 👋</h2>
+                        <p>Deel kennis en groei samen met professionals in jouw vakgebied. 5 nieuwe berichten in jouw channels.</p>
+                    </section>
+
+                    <!-- Dashboard Grid -->
+                    <div class="dashboard-grid">
+                <!-- Mijn Profiel -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Mijn Profiel</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="profile-preview">
+                            <div class="profile-avatar">TB</div>
+                            <div class="profile-info">
+                                <div class="profile-name">Tom Bach</div>
+                                <div class="profile-role">Marketing Strategist</div>
+                            </div>
+                        </div>
+                        <a href="profile.html" class="btn-primary">
+                            Bekijk profiel
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recente Activiteit -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Activiteit</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <span class="activity-text">Nieuw connectieverzoek van Sarah</span>
+                                <span class="activity-time">2u</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-text">Je post heeft 15 likes ontvangen</span>
+                                <span class="activity-time">5u</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-text">Marc heeft gereageerd op je bericht</span>
+                                <span class="activity-time">1d</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Community Channels -->
+                <div class="dashboard-card featured-card">
+                    <div class="card-header">
+                        <div class="card-icon premium-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Exclusieve Channels</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="channel-list">
+                            <li class="channel-item">
+                                <a href="channel.html?channel=copywriting" class="channel-link">
+                                    <span class="channel-icon">#</span>
+                                    <div class="channel-info">
+                                        <span class="channel-name">Copywriting</span>
+                                        <span class="channel-members">127 leden</span>
+                                    </div>
+                                    <span class="channel-badge">3</span>
+                                </a>
+                            </li>
+                            <li class="channel-item">
+                                <a href="channel.html?channel=webdesign" class="channel-link">
+                                    <span class="channel-icon">#</span>
+                                    <div class="channel-info">
+                                        <span class="channel-name">Webdesign</span>
+                                        <span class="channel-members">89 leden</span>
+                                    </div>
+                                    <span class="channel-badge">7</span>
+                                </a>
+                            </li>
+                            <li class="channel-item">
+                                <a href="channel.html?channel=stemcoach" class="channel-link">
+                                    <span class="channel-icon">#</span>
+                                    <div class="channel-info">
+                                        <span class="channel-name">Stemcoach</span>
+                                        <span class="channel-members">54 leden</span>
+                                    </div>
+                                    <span class="channel-badge">2</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kennisdeling -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3>Kennisdeling</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Gedeelde artikelen</div>
+                        <a href="#" class="btn-primary">
+                            Kennis delen
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <h3>Aankomende Events</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="activity-list">
+                            <li class="activity-item">
+                                <span class="activity-text">UX Design Masterclass</span>
+                                <span class="activity-time">5 dec</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-text">Netwerk borrel Amsterdam</span>
+                                <span class="activity-time">12 dec</span>
+                            </li>
+                            <li class="activity-item">
+                                <span class="activity-text">AI in Marketing webinar</span>
+                                <span class="activity-time">18 dec</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="16"></line>
+                                <line x1="8" y1="12" x2="16" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3>Snelle acties</h3>
+                    </div>
+                    <div class="card-content">
+                        <a href="#" class="btn-primary" style="margin-bottom: 0.75rem; width: 100%; justify-content: center;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                            Nieuw bericht plaatsen
+                        </a>
+                        <a href="#" class="btn-primary" style="background: white; color: #3b82f6; border: 2px solid #3b82f6; box-shadow: none; width: 100%; justify-content: center;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Ontdek meer channels
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-tabs">
+                <button class="sidebar-tab active" data-tab="live-feed">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                    Live Feed
+                </button>
+                <button class="sidebar-tab" data-tab="challenges">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Challenges
+                </button>
+                <button class="sidebar-tab" data-tab="updates">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    Updates
+                </button>
+                <button class="sidebar-tab" data-tab="trending">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                    Trending
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Live Feed Content -->
+                <div class="tab-content active" id="live-feed">
+                    <div class="feed-item">
+                        <div class="feed-avatar">SJ</div>
+                        <div class="feed-info">
+                            <div class="feed-author">Sarah Johnson</div>
+                            <div class="feed-text">heeft een nieuw artikel gedeeld over AI in Marketing</div>
+                            <div class="feed-time">2 min geleden</div>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-avatar">MV</div>
+                        <div class="feed-info">
+                            <div class="feed-author">Marc Visser</div>
+                            <div class="feed-text">is live gegaan in #webdesign</div>
+                            <div class="feed-time">15 min geleden</div>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-avatar">LK</div>
+                        <div class="feed-info">
+                            <div class="feed-author">Lisa Kazemier</div>
+                            <div class="feed-text">heeft een nieuwe discussie gestart in #stemcoach</div>
+                            <div class="feed-time">1 uur geleden</div>
+                        </div>
+                    </div>
+                    <div class="feed-item">
+                        <div class="feed-avatar">TB</div>
+                        <div class="feed-info">
+                            <div class="feed-author">Tom Bach</div>
+                            <div class="feed-text">heeft gereageerd op je bericht</div>
+                            <div class="feed-time">2 uur geleden</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Challenges Content -->
+                <div class="tab-content" id="challenges">
+                    <div class="challenge-item">
+                        <div class="challenge-icon">🎯</div>
+                        <div class="challenge-info">
+                            <div class="challenge-title">30 Dagen Content Challenge</div>
+                            <div class="challenge-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 67%"></div>
+                                </div>
+                                <span>20/30 dagen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">💪</div>
+                        <div class="challenge-info">
+                            <div class="challenge-title">Actief in 5 Channels</div>
+                            <div class="challenge-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>3/5 channels</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">📚</div>
+                        <div class="challenge-info">
+                            <div class="challenge-title">5 Artikelen Delen</div>
+                            <div class="challenge-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                                <span>3/5 artikelen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Updates Content -->
+                <div class="tab-content" id="updates">
+                    <div class="update-item new">
+                        <div class="update-icon">🎉</div>
+                        <div class="update-info">
+                            <div class="update-title">Nieuwe feature: Video calls</div>
+                            <div class="update-text">Start nu direct videogesprekken met je connecties</div>
+                            <div class="update-time">Vandaag</div>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-icon">🚀</div>
+                        <div class="update-info">
+                            <div class="update-title">Skills platform komt eraan</div>
+                            <div class="update-text">Binnenkort beschikbaar: online trainingen en workshops</div>
+                            <div class="update-time">3 dagen geleden</div>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-icon">📱</div>
+                        <div class="update-info">
+                            <div class="update-title">Mobiele app update</div>
+                            <div class="update-text">Verbeterde performance en nieuwe notificaties</div>
+                            <div class="update-time">1 week geleden</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trending Content -->
+                <div class="tab-content" id="trending">
+                    <div class="trending-item">
+                        <div class="trending-rank">#1</div>
+                        <div class="trending-info">
+                            <div class="trending-topic">AI-gedreven Marketing</div>
+                            <div class="trending-stats">247 berichten • 1.2k views</div>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-rank">#2</div>
+                        <div class="trending-info">
+                            <div class="trending-topic">Remote Work Tips</div>
+                            <div class="trending-stats">189 berichten • 890 views</div>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-rank">#3</div>
+                        <div class="trending-info">
+                            <div class="trending-topic">Sustainable Business</div>
+                            <div class="trending-stats">156 berichten • 734 views</div>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-rank">#4</div>
+                        <div class="trending-info">
+                            <div class="trending-topic">Personal Branding</div>
+                            <div class="trending-stats">142 berichten • 651 views</div>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <div class="trending-rank">#5</div>
+                        <div class="trending-info">
+                            <div class="trending-topic">Freelance Life</div>
+                            <div class="trending-stats">128 berichten • 592 views</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+        </main>
+    </div>
+
+    <script src="community-dashboard.js"></script>
+</body>
+</html>

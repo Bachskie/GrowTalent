@@ -1,0 +1,257 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #047857;
+    --primary-hover: #065f46;
+    --secondary-color: #10b981;
+    --accent-color: #6ee7b7;
+    --community-color: #3b82f6;
+    --skills-color: #8b5cf6;
+    --marketplace-color: #047857;
+    --background: #f9fafb;
+    --surface: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: #e5e7eb;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.landing-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Logo Section */
+.logo-section {
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.main-logo {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Pillars Section */
+.pillars-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.pillar-card {
+    background: var(--surface);
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out backwards;
+}
+
+.pillar-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.pillar-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pillar-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.pillar-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pillar-card:hover::before {
+    opacity: 1;
+}
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pillar-card.community {
+    color: var(--community-color);
+}
+
+.pillar-card.community:hover {
+    border-color: var(--community-color);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+.pillar-card.skills {
+    color: var(--skills-color);
+}
+
+.pillar-card.skills:hover {
+    border-color: var(--skills-color);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(139, 92, 246, 0.02) 100%);
+}
+
+.pillar-card.marketplace {
+    color: var(--marketplace-color);
+}
+
+.pillar-card.marketplace:hover {
+    border-color: var(--marketplace-color);
+    background: linear-gradient(135deg, rgba(4, 120, 87, 0.05) 0%, rgba(4, 120, 87, 0.02) 100%);
+}
+
+.pillar-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: currentColor;
+    color: white;
+}
+
+.pillar-icon svg {
+    filter: brightness(0) invert(1);
+}
+
+.pillar-card h2 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.pillar-card p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+.landing-footer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-logo {
+        font-size: 3rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .pillars-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pillar-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .pillar-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .pillar-card p {
+        font-size: 1rem;
+    }
+
+    .pillar-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .pillar-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+}

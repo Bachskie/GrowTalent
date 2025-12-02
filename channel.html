@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Channel - GrowTalent Community</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="community-styles.css">
+</head>
+<body>
+    <div class="channel-container">
+        <!-- Sidebar -->
+        <aside class="channel-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" style="text-decoration: none;">
+                    <h2>GrowTalent Community</h2>
+                </a>
+                <a href="community-dashboard.html" class="back-to-dashboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="channels-section">
+                <h3>Channels</h3>
+                <ul class="sidebar-channels">
+                    <li>
+                        <a href="channel.html?channel=copywriting" class="sidebar-channel" data-channel="copywriting">
+                            <span class="channel-hash">#</span>
+                            <span>Copywriting</span>
+                            <span class="unread-badge">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="channel.html?channel=webdesign" class="sidebar-channel" data-channel="webdesign">
+                            <span class="channel-hash">#</span>
+                            <span>Webdesign</span>
+                            <span class="unread-badge">7</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="channel.html?channel=stemcoach" class="sidebar-channel" data-channel="stemcoach">
+                            <span class="channel-hash">#</span>
+                            <span>Stemcoach</span>
+                            <span class="unread-badge">2</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="online-members">
+                <h3>Online leden</h3>
+                <ul class="members-list">
+                    <li class="member-item">
+                        <div class="member-avatar online">TB</div>
+                        <span>Tom Bach</span>
+                    </li>
+                    <li class="member-item">
+                        <div class="member-avatar online">SJ</div>
+                        <span>Sarah Johnson</span>
+                    </li>
+                    <li class="member-item">
+                        <div class="member-avatar online">MV</div>
+                        <span>Marc Visser</span>
+                    </li>
+                    <li class="member-item">
+                        <div class="member-avatar">LK</div>
+                        <span>Lisa Kazemier</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="channel-main">
+            <!-- Channel Header -->
+            <header class="channel-header">
+                <div class="channel-title">
+                    <h1 id="channelName"># copywriting</h1>
+                    <p id="channelDescription">Alles over copywriting, storytelling en overtuigende teksten</p>
+                </div>
+                <div class="channel-info">
+                    <span id="memberCount">127 leden</span>
+                </div>
+            </header>
+
+            <!-- Messages -->
+            <div class="messages-container" id="messagesContainer">
+                <!-- Messages will be dynamically loaded -->
+            </div>
+
+            <!-- Message Input -->
+            <div class="message-input-container">
+                <form id="messageForm" class="message-form">
+                    <button type="button" class="attachment-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+                        </svg>
+                    </button>
+                    <input type="text" id="messageInput" placeholder="Typ een bericht..." autocomplete="off">
+                    <button type="submit" class="send-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="channel.js"></script>
+</body>
+</html>
