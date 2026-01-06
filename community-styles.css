@@ -97,6 +97,28 @@ body {
     margin-top: 0.5rem;
 }
 
+.marketplace-badge {
+    display: inline-block;
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.skills-badge {
+    display: inline-block;
+    background: #fef3c7;
+    color: #b45309;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
 .subtitle {
     color: var(--text-secondary);
     font-size: 1rem;

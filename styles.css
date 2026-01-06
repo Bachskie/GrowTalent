@@ -69,11 +69,15 @@ header .container {
     font-family: 'Inter Tight', 'Inter', sans-serif;
 }
 
-.logo h1:before {
-    content: '🌱';
-    -webkit-text-fill-color: initial;
-    font-size: 1.5rem;
-    animation: float 4s ease-in-out infinite;
+.marketplace-badge {
+    display: inline-block;
+    background: #ede9fe;
+    color: #7c3aed;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
 }
 
 @keyframes float {
